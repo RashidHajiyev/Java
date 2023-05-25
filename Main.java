@@ -1,136 +1,77 @@
 import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        //          Task1
+        /*
+        Staff staff = new Staff();
+        staff.initialize1();
+        staff.print1();
+        staff.initialize();
+        staff.print();
 
-//          1st task
-/*
-class RectangleArea {
-    Float length, breadth;
+         */
 
-    public void getData() {
+        //Person person = new Person();
+
+        //       Task 2
+
+        Animal[] animals = new Animal[4];
+        animals[0] = new Dog();
+        animals[1] = new Blowfish();
+        animals[2] = new Pigeon();
+        animals[3] = new Pigeon("Pidgey", 2, 1.5, "Gray", "Rock Dove");
+        
+
+    }
+}
+
+
+//                      Task1
+
+class Person {
+    String surname, firstName, street, zipCode, city;
+
+    public void initialize() {          // creating constructor
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter the length of the rectangle: ");
-        length = sc.nextFloat();
-        System.out.print("Enter the breadth of the rectangle: ");
-        breadth = sc.nextFloat();
+        System.out.print("Enter surname: ");
+        surname = sc.nextLine();
+        System.out.print("Enter first name: ");
+        firstName = sc.nextLine();
+        System.out.print("Enter street: ");
+        street = sc.nextLine();
+        System.out.print("Enter zip code: ");
+        zipCode = sc.nextLine();
+        System.out.print("Enter city: ");
+        city = sc.nextLine();
     }
 
-    public Float computeField() {
-        return length * breadth;
-    }
-
-    public void fieldDisplay() {
-        System.out.println("The area of the rectangle is: " + computeField());
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        RectangleArea rectangle = new RectangleArea();
-        rectangle.getData();
-        rectangle.fieldDisplay();
+    public void print() {                    // giving information about class
+        System.out.println("Surname: " + surname);
+        System.out.println("First name: " + firstName);
+        System.out.println("Street: " + street);
+        System.out.println("Zip code: " + zipCode);
+        System.out.println("City: " + city);
     }
 }
 
 
- */
 
+class Staff extends Person {    // new class after inheritance has all variables from father class. We only need to add two additionals
+    String education, position;
 
-
-//     2nd task
-/*
-class Car {
-    private String model;
-    private String brand;
-    private int year;
-    private double price;
-    private String color;
-    private int quantity;
-
-    public Car(String model, String brand, int year, double price, String color, int quantity) {
-        this.model = model;
-        this.brand = brand;
-        this.year = year;
-        this.price = price;
-        this.color = color;
-        this.quantity = quantity;
+    public void initialize1() {
+        super.initialize();
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter education: ");
+        education = sc.nextLine();
+        System.out.print("Enter position: ");
+        position = sc.nextLine();
     }
 
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public void delivery(int quantity) {
-        this.quantity += quantity;
-    }
-
-    public void sell(int quantity) {
-        this.quantity -= quantity;
-    }
-
-    public String toString() {
-        return "Model: " + model + "\nBrand: " + brand + "\nYear: " + year + "\nPrice: " + price + "\nColor: " + color + "\nQuantity: " + quantity;
+    public void print1() {
+        super.print();
+        System.out.println("Education: " + education);
+        System.out.println("Position: " + position);
     }
 }
-
-public class Main {
-    public static void main(String[] args) {
-        Car Mercedes_S = new Car("S class", "Mercedes", 2023, 120000, "Silver", 7);
-        System.out.println(Mercedes_S.toString());
-
-        Mercedes_S.sell(5);
-        System.out.println("After selling 2 cars:");
-        System.out.println("Quantity: " + Mercedes_S.getQuantity());
-
-        Mercedes_S.setColor("Black");
-        Mercedes_S.setPrice(150000);
-        System.out.println("After changing color and price:");
-        System.out.println(Mercedes_S.toString());
-    }
-}
-
- */
-
 
